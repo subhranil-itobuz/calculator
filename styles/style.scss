@@ -9,6 +9,11 @@
   }
 }
 
+body {
+  max-height: 740px;
+  background-color: rgba(0, 0, 0, 0.503);
+}
+
 .calculator {
   background-color: rgb(189, 181, 181);
   width: 310px;
@@ -24,11 +29,21 @@
     width: 90%;
     background-color: white;
     text-align: end;
+    color: black;
+    font-weight: 700;
+
+    &::placeholder {
+      font-weight: 200;
+    }
   }
 
   &-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
+
+    & * {
+      box-shadow: 3px 2px rgb(239, 232, 232);
+    }
   }
 }
