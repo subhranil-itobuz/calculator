@@ -7,12 +7,17 @@ const deleteBtn = document.getElementById("deleteBtn");
 const evalBtn = document.getElementById("evalBtn");
 const percentageBtn = document.getElementById("percentageBtn");
 const decimalBtn = document.getElementById("decimalBtn");
+const squareBtn = document.getElementById('squareBtn')
+const cubeBtn = document.getElementById('cubeBtn')
+const factorialBtn = document.getElementById('factorialBtn')
 
 let operand1 = 0;
 let operand2 = 0;
 let operator = "";
 
 input.value = "";
+
+const factorial = (n) => (n < 1) ? 1 : factorial(n - 1) * n;
 
 clearBtn.addEventListener("click", () => {
   input.value = "";
@@ -88,3 +93,21 @@ percentageBtn.addEventListener("click", () => {
 decimalBtn.addEventListener("click", () => {
   if (!input.value.includes(".")) input.value += ".";
 });
+
+squareBtn.addEventListener('click', () => {
+  operand1 = Math.pow(operand1, 2)
+  evalBtn.click()
+  operand1 = input.value
+})
+
+cubeBtn.addEventListener('click', () => {
+  operand1 = Math.pow(operand1, 3)
+  evalBtn.click()
+  operand1 = input.value
+})
+
+factorialBtn.addEventListener('click', () => {
+  operand1 = factorial(operand1)
+  evalBtn.click()
+  operand1 = input.value
+})
