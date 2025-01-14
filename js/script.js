@@ -14,6 +14,7 @@ const factorialBtn = document.getElementById('factorialBtn')
 let operand1 = 0;
 let operand2 = 0;
 let operator = "";
+let result = 0;
 
 input.value = "";
 
@@ -58,7 +59,6 @@ operatorBtn.forEach((element) => {
 });
 
 evalBtn.addEventListener("click", () => {
-  let result = 0;
   operand2 = operand2.toString().slice(1);
   switch (operator) {
     case "+":
@@ -86,8 +86,14 @@ evalBtn.addEventListener("click", () => {
 });
 
 percentageBtn.addEventListener("click", () => {
-  input.value = Number(operand1) / 100;
-  operand1 = input.value;
+  if(operator === '') {
+    input.value = Number(operand1) / 100;
+    operand1 = input.value;
+  }
+  else {
+    evalBtn.click();
+    input.value = Number(result) / 100;
+  }
 });
 
 decimalBtn.addEventListener("click", () => {
