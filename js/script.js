@@ -10,6 +10,7 @@ const decimalBtn = document.getElementById("decimalBtn");
 const squareBtn = document.getElementById('squareBtn')
 const cubeBtn = document.getElementById('cubeBtn')
 const factorialBtn = document.getElementById('factorialBtn')
+const powerBtn = document.getElementById('powerBtn');
 
 let operand1 = 0;
 let operand2 = 0;
@@ -17,6 +18,12 @@ let operator = "";
 let result = 0;
 
 input.value = "";
+
+function power(value) {
+  operand1 = Math.pow(operand1, value)
+  evalBtn.click()
+  operand1 = input.value
+}
 
 const factorial = (n) => (n < 1) ? 1 : factorial(n - 1) * n;
 
@@ -60,22 +67,29 @@ operatorBtn.forEach((element) => {
 
 evalBtn.addEventListener("click", () => {
   operand2 = operand2.toString().slice(1);
+
+  let op1 = Number(operand1);
+  let op2 = Number(operand2);
+
   switch (operator) {
     case "+":
-      result = Number(operand1) + Number(operand2);
+      result = op1 + op2;
       break;
     case "-":
-      result = Number(operand1) - Number(operand2);
+      result = op1 - op2;
       break;
     case "*":
-      result = Number(operand1) * Number(operand2);
+      result = op1 * op2;
       break;
     case "/":
-      result = Number(operand1) / Number(operand2);
+      result = op1 / op2;
+      break;
+    case "^":
+      result = Math.pow(op1, op2);
       break;
 
     default:
-      result = Number(operand1);
+      result = op1;
   }
 
   if (!Number.isInteger(result)) result = result.toFixed(2);
@@ -86,7 +100,7 @@ evalBtn.addEventListener("click", () => {
 });
 
 percentageBtn.addEventListener("click", () => {
-  if(operator === '') {
+  if (operator === '') {
     input.value = Number(operand1) / 100;
     operand1 = input.value;
   }
@@ -100,16 +114,13 @@ decimalBtn.addEventListener("click", () => {
   if (!input.value.includes(".")) input.value += ".";
 });
 
-squareBtn.addEventListener('click', () => {
-  operand1 = Math.pow(operand1, 2)
-  evalBtn.click()
-  operand1 = input.value
-})
+squareBtn.addEventListener('click', () => power(2))
 
-cubeBtn.addEventListener('click', () => {
-  operand1 = Math.pow(operand1, 3)
-  evalBtn.click()
-  operand1 = input.value
+cubeBtn.addEventListener('click', () => power(3))
+
+powerBtn.addEventListener('click', () => {
+  input.value = '^';
+  operator = '^';
 })
 
 factorialBtn.addEventListener('click', () => {

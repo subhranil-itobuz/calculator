@@ -10,10 +10,10 @@
 </head>
 
 <body>
-  <h1 class="text-center m-0 pt-5 fw-bold text-light fs-1">CALCULATOR</h1>
+  <h1 class="page-title text-center m-0 pt-5 fw-bold text-light fs-1 font-monospace">CALCULATOR</h1>
   <section class="calculator px-3 py-4 rounded-2 shadow shadow-lg">
     <input type="text" disabled placeholder="Enter Value"
-      class="calculator-input mx-auto my-3 py-3 px-2 rounded-3 outline-0 border-0 shadow" id="input">
+      class="calculator-input mx-auto mt-1 mb-3 py-3 px-2 rounded-3 outline-0 border-0 shadow" id="input">
     <div class="calculator-buttons gap-2 fw-bold">
       <button class="btn btn-danger p-2 text-center " id="clearBtn">AC</button>
       <button class="btn btn-secondary p-2 text-center" id="signBtn">-/+</button>
@@ -24,19 +24,20 @@
       <button class="btn btn-dark p-2 text-center operand-btn">8</button>
       <button class="btn btn-dark p-2 text-center operand-btn">9</button>
       <button class="btn btn-secondary p-2 text-center" id="cubeBtn">X <sup class="shadow-none">3</sup></button>
-      <button class="btn btn-primary p-2 text-center operator-btn">*</button>
+      <button class="btn btn-secondary p-2 text-center" id="factorialBtn">X !</button>
       <button class="btn btn-dark p-2 text-center operand-btn">4</button>
       <button class="btn btn-dark p-2 text-center operand-btn">5</button>
       <button class="btn btn-dark p-2 text-center operand-btn">6</button>
-      <button class="btn btn-secondary p-2 text-center" id="factorialBtn">X !</button>
+      <button class="btn btn-secondary p-2 text-center" id="powerBtn">X <sup class="shadow-none">Y</sup></button>
       <button class="btn btn-primary p-2 text-center operator-btn">/</button>
       <button class="btn btn-dark p-2 text-center operand-btn">1</button>
       <button class="btn btn-dark p-2 text-center operand-btn">2</button>
       <button class="btn btn-dark p-2 text-center operand-btn">3</button>
-      <button class="btn btn-primary p-2 text-center operator-btn">-</button>
+      <button class="btn btn-primary p-2 text-center operator-btn">*</button>
       <button class="btn btn-success p-2 text-center eval-btn" id="evalBtn">=</button>
-      <button class="btn btn-dark p-2 text-center operand-btn zero-btn">0</button>
       <button class="btn btn-secondary p-2 text-center" id="decimalBtn">.</button>
+      <button class="btn btn-dark p-2 text-center operand-btn">0</button>
+      <button class="btn btn-primary p-2 text-center operator-btn">-</button>
       <button class="btn btn-primary p-2 text-center operator-btn">+</button>
     </div>
   </section>
